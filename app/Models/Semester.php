@@ -10,6 +10,6 @@ class Semester extends Model
     use HasFactory;
     protected $table = "semester";
     protected $fillable = [
-        'id', 'semester'
+        'id', 'semester_id'
     ];
 }

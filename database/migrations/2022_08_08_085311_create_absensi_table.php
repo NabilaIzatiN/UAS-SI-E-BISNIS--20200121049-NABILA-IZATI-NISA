@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('keterangan');
             $table->timestamps();
+            $table->string('mahasiswa');
         });
     }
 

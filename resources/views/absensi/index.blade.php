@@ -53,7 +53,7 @@
             @foreach ($absen as $item)
                 <tr class="text-center">
                     <td>{{$no}}</td>
-                    <td>{{ Auth::user()->name }}</td>
+                    <td>{{$item->mahasiswa}}</td>
                     <td>{{$item->matakuliah->matakuliah}}</td>
                     <td><button class="btn btn-sm btn-outline-primary" disabled>{{$item->keterangan}}</button></td>
                 </tr>

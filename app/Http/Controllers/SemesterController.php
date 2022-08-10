@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Semester;
+use App\Models\Mahasiswa;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -15,9 +16,10 @@ class SemesterController extends Controller
      */
     public function index()
     {
-        $dtSemester = Semester::all();
+        $dtMahasiswa = Mahasiswa::paginate(10);
+        $dtSemester = Semester::paginate(10);
         return view('semester.index', compact(
-            'dtSemester'
+            'dtSemester', 'dtMahasiswa'
         ));
     }
 

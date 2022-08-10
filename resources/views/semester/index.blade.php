@@ -1,7 +1,7 @@
 @extends('../layouts/mainapp')
 
 @section('title', 'Semester')
-@section('pagetitle', 'Semester')
+@section('pagetitle', 'Tabel Semester')
 
 @section('container')
 
@@ -40,20 +40,21 @@
             <div class="position-relative mb-5">
                 <div class="position-absolute top-0 end-0"></div>
             </div>
-            <thead>
+            <thead class="text-center">
                 <th>No</th>
+
                 <th>Semester</th>
             </thead>
             @php($no = 1)
-            @foreach ($dtSemester as $item)
-                <tr>
+            @foreach ($dtMahasiswa as $item)
+                <tr class="text-center">
                     <td>{{$no}}</td>
                     <td>Semester {{$item->semester}}</td>
                 </tr>
                 @php($no++)
             @endforeach
         </table>
-    </div>   
+    </div>
     <br>
     <br>
     <br>

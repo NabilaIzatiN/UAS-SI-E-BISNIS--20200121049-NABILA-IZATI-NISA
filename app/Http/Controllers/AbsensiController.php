@@ -32,7 +32,7 @@ class AbsensiController extends Controller
     public function create()
     {
         $matakuliah = Matakuliah::all();
-        $absen = new Absen;
+        $absen = new Absensi();
         return view('absensi.create', compact(
             'matakuliah', 'absen'
         ));
