@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 10 Agu 2022 pada 00.45
+-- Waktu pembuatan: 10 Agu 2022 pada 03.42
 -- Versi server: 10.4.22-MariaDB
 -- Versi PHP: 8.1.2
 
@@ -35,6 +35,17 @@ CREATE TABLE `absensi` (
   `mahasiswa` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `matakuliah_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `absensi`
+--
+
+INSERT INTO `absensi` (`id`, `keterangan`, `created_at`, `updated_at`, `mahasiswa`, `matakuliah_id`) VALUES
+(4, 'Hadir', '2022-08-09 16:48:18', '2022-08-09 16:48:18', 'Kuslia Noval Widya', 6),
+(5, 'Tidak Hadir', '2022-08-09 16:55:28', '2022-08-09 16:55:28', 'Wahyu Kurnia Senjaya', 4),
+(6, 'Hadir', '2022-08-09 17:02:34', '2022-08-09 17:02:34', 'Silviana Devi', 4),
+(7, 'Hadir', '2022-08-09 17:02:57', '2022-08-09 17:02:57', 'Lisa Adinda', 5),
+(8, 'Hadir', '2022-08-09 17:03:36', '2022-08-09 17:03:36', 'Stephani Trivena', 10);
 
 -- --------------------------------------------------------
 
@@ -86,7 +97,13 @@ CREATE TABLE `jadwal` (
 --
 
 INSERT INTO `jadwal` (`id`, `jadwal`, `created_at`, `updated_at`, `matakuliah_id`) VALUES
-(3, '2022-08-10', '2022-08-09 14:41:29', '2022-08-09 14:41:29', 3);
+(4, '2022-08-15', '2022-08-09 16:35:36', '2022-08-09 16:35:36', 6),
+(5, '2022-08-15', '2022-08-09 16:36:00', '2022-08-09 16:36:00', 4),
+(6, '2022-08-16', '2022-08-09 16:42:57', '2022-08-09 16:42:57', 5),
+(7, '2022-08-16', '2022-08-09 16:43:56', '2022-08-09 16:43:56', 9),
+(8, '2022-08-17', '2022-08-09 16:44:16', '2022-08-09 16:44:16', 7),
+(9, '2022-08-18', '2022-08-09 16:44:31', '2022-08-09 16:44:31', 8),
+(10, '2022-08-19', '2022-08-09 16:44:46', '2022-08-09 16:44:46', 10);
 
 -- --------------------------------------------------------
 
@@ -121,6 +138,17 @@ CREATE TABLE `mahasiswas` (
   `semester` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data untuk tabel `mahasiswas`
+--
+
+INSERT INTO `mahasiswas` (`id`, `nim`, `nama_mhs`, `email`, `umur`, `alamat`, `created_at`, `updated_at`, `no_tlp`, `semester`) VALUES
+(6, 20200121016, 'Wahyu Kurnia Senjaya', 'wahyu.senjaya.si.20@cic.ac.id', 21, 'Cirebon', '2022-08-09 16:24:19', '2022-08-09 16:24:19', 81324184684, 4),
+(7, 2020107008, 'Silviana Devi', 'silviana.devi.si.20@cic.ac.id', 21, 'Cirebon', '2022-08-09 16:26:05', '2022-08-09 16:26:05', 89512602298, 4),
+(8, 20200121044, 'Kuslia Noval Widya', 'kuslia.widya.si.20@cic.ac.id', 21, 'Cirebon', '2022-08-09 16:28:04', '2022-08-09 16:28:04', 8978471317, 4),
+(9, 20200121035, 'Stephani Trivena', 'stephani.trivena.si.20@cic.ac.id', 21, 'Cirebon', '2022-08-09 16:29:18', '2022-08-09 16:29:18', 895374901258, 4),
+(10, 20200121041, 'Lisa Adinda', 'lisa.adinda.si.20@cic.ac.id', 21, 'Cirebon', '2022-08-09 16:30:55', '2022-08-09 16:30:55', 85624037083, 4);
+
 -- --------------------------------------------------------
 
 --
@@ -140,7 +168,13 @@ CREATE TABLE `matakuliah` (
 --
 
 INSERT INTO `matakuliah` (`id`, `sks`, `created_at`, `updated_at`, `matakuliah`) VALUES
-(3, 4, '2022-08-09 14:31:50', '2022-08-09 14:31:50', 'Pemograman');
+(4, 4, '2022-08-09 16:32:23', '2022-08-09 16:32:23', 'Pemrograman Internet Intermediate'),
+(5, 2, '2022-08-09 16:32:44', '2022-08-09 16:32:44', 'UI & UX Design'),
+(6, 3, '2022-08-09 16:33:09', '2022-08-09 16:33:09', 'Business Intelegence'),
+(7, 3, '2022-08-09 16:33:35', '2022-08-09 16:33:35', 'E-Commerce'),
+(8, 3, '2022-08-09 16:33:58', '2022-08-09 16:33:58', 'Analisa sistem berorientasi obyek'),
+(9, 2, '2022-08-09 16:34:26', '2022-08-09 16:34:26', 'TOEFL Preparations'),
+(10, 3, '2022-08-09 16:34:47', '2022-08-09 16:34:47', 'Rekayasa Perangkat Lunak : Agile Scrum Introduction');
 
 -- --------------------------------------------------------
 
@@ -244,8 +278,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `role`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'admin1', 'admin@gmail.com', NULL, '$2y$10$mE4UWlXBIpMP9z7nOuQhie1Mts8FrQrhDV39/lfihZF0On5x3eBAa', 'admin', NULL, '2022-08-09 05:26:01', '2022-08-09 05:26:01'),
-(2, 'Si A', 'sia.pa@gmail.com', NULL, '$2y$10$XeuOvKHzJslXtZBDOH3j6uYTC1dbwxZ9Xf.HNLuxZnYQfEj23XzYW', 'mahasiswa', NULL, '2022-08-09 05:27:13', '2022-08-09 05:27:13'),
-(4, 'Luna', 'lunapadah@gmail.com', NULL, '$2y$10$ce85KemaXFAz18JvO68spuQ2DQmTaHKVItuVVWkFLbrCL3t2QHphq', 'admin', NULL, '2022-08-09 15:29:39', '2022-08-09 15:29:39');
+(5, 'Kuslia Noval Widya', 'kuslia@gmail.com', NULL, '$2y$10$hPfaMVTun2dQG/yBAUDisOU3y/zl13SMkonshPd.B4Me8t392IVwG', 'admin', NULL, '2022-08-09 16:47:55', '2022-08-09 16:47:55'),
+(6, 'Wahyu Kurnia Senjaya', 'wahyu.senjaya.si.20@cic.ac.id', NULL, '$2y$10$3z8nowN2XhknVmhIGd6nQ.6ley5NLvsoj3aJQyRZIdsaT6qzxBdKe', 'admin', NULL, '2022-08-09 16:49:33', '2022-08-09 16:49:33');
 
 --
 -- Indexes for dumped tables
@@ -337,7 +371,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `absensi`
 --
 ALTER TABLE `absensi`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `datamahasiswa`
@@ -355,7 +389,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT untuk tabel `jadwal`
 --
 ALTER TABLE `jadwal`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `kontrak`
@@ -367,13 +401,13 @@ ALTER TABLE `kontrak`
 -- AUTO_INCREMENT untuk tabel `mahasiswas`
 --
 ALTER TABLE `mahasiswas`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `matakuliah`
 --
 ALTER TABLE `matakuliah`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `migrations`
@@ -397,7 +431,7 @@ ALTER TABLE `semester`
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
